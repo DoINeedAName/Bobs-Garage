@@ -32,7 +32,7 @@ import EditBlog from './components/blogs/EditBlog';
 const App = () => {
 
   return (    
-    <div>
+    <div className="App">
       <Provider store = {store}>
         <Router>
           <Header branding="Bob's Garage"/>

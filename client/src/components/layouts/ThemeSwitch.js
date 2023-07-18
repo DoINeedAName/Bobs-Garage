@@ -38,16 +38,15 @@ export const ThemeSwitch = () => {
 
   return (
     <div>
-      <h5 className='text-center'>(Light / Dark Mode)</h5>
-        <div className='theme-switcher-wrap'>
-          <label className={`theme-switcher-label ${isDark ? 'active' : ''}`}
-            onClick={handleLabelClick}
-          >
-            <div className='switch-path'>
-              <div className='switch-handle'></div>
-            </div>
-          </label>
-        </div>
+      {/* <div className='theme-switcher-wrap'> */}
+        <label className={`theme-switcher-label ${isDark ? 'active' : ''}`}
+          onClick={handleLabelClick}
+        >
+          <div className='switch-path'>
+            <div className='switch-handle'></div>
+          </div>
+        </label>
+      {/* </div> */}
     </div>
   )
 }

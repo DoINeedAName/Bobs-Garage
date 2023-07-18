@@ -1,0 +1,6 @@
+import React, {Component} from 'react';
+import { useNavigate, useParams} from 'react-router-dom';
+
+export const withNavigation = (Component) => {
+  return props => <Component {...props} navigate={useNavigate()}/>
+}

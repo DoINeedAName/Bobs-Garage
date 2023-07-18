@@ -16,7 +16,7 @@ const Header = ({logout, branding, isAuthenticated, isAdmin,}) => {
     <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          <h1 className="text-light">{branding}</h1>
+          {branding}
         </Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -36,6 +36,24 @@ const Header = ({logout, branding, isAuthenticated, isAdmin,}) => {
               <Link className="nav-link" to="/reviews"><MdOutlineReviews/>Reviews</Link>
             </li>
             <li className="nav-item dropdown">
+              <Link 
+                className="nav-link dropdown-toggle" 
+                to="#" role="button" 
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <FaQuestion/>About
+              </Link>
+              <ul className="dropdown-menu dropdown-menu-dark">
+                <li>
+                  <Link class="dropdown-item" to="/about">About Us</Link>
+                </li>
+                <li>
+                  <Link class="dropdown-item" to="/staff">Meet Our Staff</Link>
+                </li>
+              </ul>
+            </li>
+            {/* <li className="nav-item dropdown">
               <button
                 className="navbar-toggler" 
                 data-bs-toggle="collapse" 
@@ -68,7 +86,7 @@ const Header = ({logout, branding, isAuthenticated, isAdmin,}) => {
                   </li>
                 </ul>
               </div>
-            </li>
+            </li> */}
           </ul>
             
           <ul className="nav justify-content-end navbar-nav">
@@ -85,7 +103,7 @@ const Header = ({logout, branding, isAuthenticated, isAdmin,}) => {
                 <Link onClick={logout} className="nav-link" to="#!"><FaSignOutAlt/>Logout</Link>
             }
           </ul>       
-          <ThemeSwitch/>
+          {/* <ThemeSwitch/> */}
           {/* {isAuthenticated?(
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">

@@ -31,33 +31,8 @@ import EditBlog from './components/blogs/EditBlog';
 // Can only have one div pretty much
 const App = () => {
 
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    // Checks local storage
-    const currentThemeColor = localStorage.getItem('theme-color');
-    if(currentThemeColor === 'theme-dark') {
-      setIsDark(true)
-    }
-    else {
-      setIsDark(false)
-    }
-  }, [])
-
-  const handleLabelClick = () => {
-    if (isDark) {
-      localStorage.setItem('theme-color', 'theme-light');
-      setIsDark(false);
-    }
-    else {
-      localStorage.setItem('theme-color', 'theme-dark');
-      setIsDark(true);
-    }
-  }
-
-  return (
-    
-    <div className={`App ${isDark ? 'theme-dark' : ''}`}>
+  return (    
+    <div>
       <Provider store = {store}>
         <Router>
           <Header branding="Bob's Garage"/>
@@ -81,21 +56,8 @@ const App = () => {
               <Route path='blogs/add' element={<AddBlog/>}/>
               <Route path='blog/edit/:id' element={<EditBlog/>}/>
             </Routes>        
-          </div>       
-          <Footer>
-          
-          </Footer>
-          
-          <h5 className='text-center'>(Light / Dark Mode)</h5>
-            <div className='theme-switcher-wrap'>
-              <label className={`theme-switcher-label ${isDark ? 'active' : ''}`}
-                onClick={handleLabelClick}
-              >
-                <div className='switch-path'>
-                  <div className='switch-handle'></div>
-                </div>
-              </label>
-            </div>
+          </div>        
+        <Footer/>
       </Router>
     </Provider> 
  </div>

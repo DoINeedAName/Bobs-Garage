@@ -7,9 +7,9 @@ import {logout} from '../../actions/authActions';
 import {FaHome, FaQuestion, FaDoorOpen, FaSignInAlt, FaSignOutAlt, FaMicroblog} from 'react-icons/fa'
 import {ImWrench} from "react-icons/im";
 import { MdOutlineReviews } from "react-icons/md";
+import {ThemeSwitch} from './ThemeSwitch.js';
 
-
-const Header = ({logout, branding, isAuthenticated, isAdmin}) => {
+const Header = ({logout, branding, isAuthenticated, isAdmin,}) => {
   
 // console.log(props)
   return (
@@ -54,7 +54,8 @@ const Header = ({logout, branding, isAuthenticated, isAdmin}) => {
           </li> 
            
         </ul>
-      ) : null} 
+      ) : null}
+      <ThemeSwitch/>
       {/* {isAdmin?(
             <li className="nav-item">
               <Link className="nav-link" to="/users"><FaSignInAlt/>Users</Link>

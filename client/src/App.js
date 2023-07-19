@@ -32,7 +32,7 @@ import EditBlog from './components/blogs/EditBlog';
 const App = () => {
 
   return (    
-    <div className="App">
+    <>
       <Provider store = {store}>
         <Router>
           <Header branding="Bob's Garage"/>
@@ -60,7 +60,7 @@ const App = () => {
         <Footer/>
       </Router>
     </Provider> 
- </div>
+ </>
   );
 } 
 

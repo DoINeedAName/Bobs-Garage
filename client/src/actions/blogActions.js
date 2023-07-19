@@ -16,7 +16,6 @@ import axios from 'axios';
 export const getBlogs = () => async dispatch => {
   try {
     const res = await axios.get('/api/blogs');
-    console.log(res.data)
     dispatch({
       type: GET_BLOGS,
       payload: res.data
@@ -27,7 +26,6 @@ export const getBlogs = () => async dispatch => {
       type: GET_BLOGS_FAILED,
       payload: error
     })
-    console.log('Failed to retrieve blogs')
   }
 };
 
@@ -44,15 +42,12 @@ export const getBlog = (id) => async dispatch => {
       type: GET_BLOG_FAILED,
       payload: error
     })
-    console.log('Failed to retrieve blog')
   }
 }
 
 export const addBlog = blog => async dispatch => {
   try {
-    console.log(blog);
     const res = await axios.post('/api/blog/add', blog);
-    console.log(res.data);
     dispatch ({
       type: ADD_BLOG,
       payload: res.data
@@ -63,13 +58,11 @@ export const addBlog = blog => async dispatch => {
       type: ADD_BLOG_FAILED,
       payload: error
     })
-    console.log('Failed to add blog')
   }
 };
 
 export const updateBlog = blog => async dispatch => {
   try {
-    console.log(blog)
     const res = await axios.put(`/api/blog/edit/${blog.id}`, blog);
     dispatch({
       type: UPDATE_BLOG,
@@ -81,7 +74,6 @@ export const updateBlog = blog => async dispatch => {
       type: UPDATE_BLOG_FAILED,
       payload: error
     })
-    console.log('Failed to update blog')
   }
 }
 

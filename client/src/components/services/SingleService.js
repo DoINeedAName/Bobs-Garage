@@ -8,7 +8,6 @@ import '../../actions/authActions'
 const SingleService = ({service, deleteService, isAdmin}) => {
   
   const {name, image, description, price} = service
-
   return(
     <div className='card m-3' >
       <div className='row card-body'>

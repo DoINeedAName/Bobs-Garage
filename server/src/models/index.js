@@ -33,7 +33,7 @@ const Service = sequelize.define('Service',
     name: {type: DataTypes.STRING},
     image: {type: DataTypes.STRING},
     description: {type: DataTypes.STRING},
-    price: {type: DataTypes.STRING}
+    price: {type: DataTypes.INTEGER}
   }
 );
 
@@ -93,7 +93,6 @@ const Blog = sequelize.define('Blog',
 
 // Signs token
 User.prototype.signToken = function(payload){
-  console.log(payload);
   const token = jwt.sign(
     payload, 
     config.authentication.jwtSecret, {
@@ -104,8 +103,6 @@ User.prototype.signToken = function(payload){
 
 // Hashes password
 User.prototype.hashPwd = async function(password, salt) {
-  console.log(password)
-  console.log(salt)
   const hashedPassword = await bcrypt.hash(password, salt);
 
   return hashedPassword;

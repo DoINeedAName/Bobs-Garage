@@ -24,7 +24,6 @@ export const getReviews = () => async dispatch => {
       type: GET_REVIEWS_FAILED,
       payload: error
     });
-    console.log('Failed to get reviews')
   }
 }
 
@@ -41,7 +40,6 @@ export const getReview = (id) => async dispatch => {
       type: GET_REVIEW_FAILED,
       payload: error
     });
-    console.log('Failed to retrieve review')
   }
 }
 
@@ -58,7 +56,6 @@ export const addReview = review => async dispatch => {
       type: ADD_REVIEW_FAILED,
       payload: error
     });
-    console.log('Failed to add review')
   }
 }
 

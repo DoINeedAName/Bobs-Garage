@@ -21,7 +21,6 @@ export const getServices = () => async dispatch => {
     });
   }
   catch (error) {
-    console.log("Uh oh")
   }
 };
 
@@ -66,9 +65,7 @@ export const getService = (id) => async dispatch => {
 };
 
 export const addService = service => async dispatch => {
-  console.log(service);
   const res = await axios.post('/api/service/add', service);
-  console.log(res.data);
   dispatch ({
     type: ADD_SERVICE,
     payload: res.data
@@ -76,7 +73,6 @@ export const addService = service => async dispatch => {
 };
 
 export const updateService = service => async dispatch => {
-  console.log(service)
   const res = await axios.put(`/api/service/edit/${service.id}`, service);
   dispatch({
     type: UPDATE_SERVICE,
@@ -85,7 +81,6 @@ export const updateService = service => async dispatch => {
 };
 
 export const deleteService = (id) => async dispatch => {
-  console.group('delete')
   try{
     await axios.delete(`/api/service/${id}`);
 

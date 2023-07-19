@@ -51,7 +51,7 @@ export default function blogReducer(state = initialState, action) {
       return {
         ...state,
         blogs: state.blogs.map(blog =>
-          blog.id === action.payload.id ?
+          blog.B_id === action.payload.id ?
           (blog = action.payload) : blog
         ),
         blog: action.payload,

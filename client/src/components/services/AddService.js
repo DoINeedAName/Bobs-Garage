@@ -25,7 +25,6 @@ const AddService = ({addService, isAdmin}) => {
 
   const onSubmit = async(e) => {
     e.preventDefault();
-    console.log('OnSubmit running...');
 
     // Code for validation
     if (name === ''){
@@ -55,7 +54,6 @@ const AddService = ({addService, isAdmin}) => {
       price
     }
 
-    console.log(newService)
     addService(newService);
 
     navigate('/services')
@@ -69,7 +67,6 @@ const AddService = ({addService, isAdmin}) => {
     <Fragment>
       <h1 className='text-primary'>Add New Service</h1>
       <div className='card mb-3'>
-        <div className='card-header'>Add Service</div>
         <div className='card-body'>
           <form onSubmit={e => onSubmit(e)}>
             <div className='mb-3'>
@@ -129,7 +126,7 @@ const AddService = ({addService, isAdmin}) => {
               <input 
                 type='submit' 
                 value='Add Service' 
-                className='btn btn-light'
+                className='btn btn-primary'
                 />
             </div>
           </form>

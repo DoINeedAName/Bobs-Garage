@@ -4,11 +4,8 @@ import {setAlert} from './alertActions';
 
 // Get all users
 export const getUsers = () => async dispatch => {
-  console.log('GetUsers');
-
   try {
     const res = await axios.get('/api/users');
-    console.log(res.data);
     dispatch({
       type: GET_USERS,
       payload: res.data

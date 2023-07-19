@@ -74,7 +74,7 @@ export default function serviceReducer(state = initialState, action) {
       return{
         ...state,
         services: state.services.map(service =>
-          service.id === action.payload.id ?
+          service.S_id === action.payload.id ?
           (service = action.payload) : service),
         service: action.payload,
         loading: false

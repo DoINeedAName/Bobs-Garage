@@ -23,7 +23,6 @@ const AddBlog = ({addBlog, isAdmin}) => {
 
   const onSubmit = async(e) => {
     e.preventDefault();
-    console.log('OnSubmit running...');
 
     if(heading === '') {
       setFormData({...formData, errors: {heading: 'Heading is required'}});
@@ -46,7 +45,6 @@ const AddBlog = ({addBlog, isAdmin}) => {
       content
     }
 
-    console.log(newBlog);
     addBlog(newBlog);
 
     navigate('/blogs')
@@ -60,7 +58,6 @@ const AddBlog = ({addBlog, isAdmin}) => {
     <Fragment>
       <h1 className='text-primary'>Add new Blog</h1>
       <div className='card mb-3'>
-        <div className='card-header'>Add Blog</div>
         <div className='card-body'>
           <form onSubmit={e => onSubmit(e)}>
             <div className='mb-3'>
@@ -107,10 +104,9 @@ const AddBlog = ({addBlog, isAdmin}) => {
               <input
                 type='submit'
                 value='Add Blog'
-                className='btn btn-light'
+                className='btn btn-primary'
               />
             </div>
-            
           </form>
         </div>
       </div>

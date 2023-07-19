@@ -4,7 +4,6 @@ import classnames from 'classnames';
 import {useNavigate, Navigate} from 'react-router-dom';
 import {connect} from 'react-redux';
 import { addReview } from '../../actions/reviewActions';
-import { BsPlusLg } from "react-icons/bs";
 import '../../actions/authActions';
 
 const AddReview = ({addReview, isAuthenticated, U_id, username}) => {
@@ -23,7 +22,6 @@ const AddReview = ({addReview, isAuthenticated, U_id, username}) => {
 
   const onSubmit = async(e) => {
     e.preventDefault();
-    console.log('OnSubmit running...');
 
     // Code for validation
 
@@ -32,11 +30,6 @@ const AddReview = ({addReview, isAuthenticated, U_id, username}) => {
       return;
     }
 
-    // if (rating === ''){
-    //   setFormData({...formData, errors: {rating: 'A price is required'}});
-    //   return;
-    // }
-
     const newReview = {
       U_id,
       username,
@@ -44,7 +37,6 @@ const AddReview = ({addReview, isAuthenticated, U_id, username}) => {
       rating
     }
 
-    console.log(newReview)
     addReview(newReview);
 
     navigate('/reviews')
@@ -58,7 +50,6 @@ const AddReview = ({addReview, isAuthenticated, U_id, username}) => {
     <Fragment>
       <h1 className='text-primary'>Leave a Review</h1>
       <div className='card mb-3'>
-        <div className='card-header'>Add Service</div>
         <div className='card-body'>
           <form onSubmit={e => onSubmit(e)}>
             <div className='mb-3'>
@@ -75,24 +66,11 @@ const AddReview = ({addReview, isAuthenticated, U_id, username}) => {
                 />
                 {errors.description && <div className='invalid-feedback'>{errors.description}</div>}
             </div>
-            {/* <div className='mb-3'>
-              <label htmlFor='rating'>Rating</label>
-              <input
-                type='text'
-                className= {classnames('form-control', {'is-invalid' : errors.rating})}
-                id='rating'
-                placeholder='rating'
-                name='rating'
-                value={rating}
-                onChange={e => onChange(e)}
-                />
-                {errors.rating && <div className='invalid-feedback'>{errors.rating}</div>}
-            </div> */}
             <div className='d-grip gap-2'>
               <input 
                 type='submit' 
                 value='Submit Review' 
-                className='btn btn-light'
+                className='btn btn-primary'
                 />
             </div>
           </form>

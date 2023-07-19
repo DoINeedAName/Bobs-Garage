@@ -69,7 +69,7 @@ const Staff = () => {
               className="card-img-top" 
               alt='Sam'>
             </img>
-            <div class='card-body'>
+            <div className='card-body'>
               <h4>Debbie</h4>
                 <p className='card-text text-center'>
                   Debbie is the first point of call for our customers. She is our receptionist but she's as knowledgable about cars as the rest of the staff

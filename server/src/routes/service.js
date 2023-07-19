@@ -116,20 +116,32 @@ router.delete('/service/:id', (req, res) => {
 //Sort in ascending order
 router.get('/services/order-a', async(req, res) => {
   console.log('/api/services/order-a - get');
-
-  const list = await Service.findAll(
-    {order: [['price', 'ASC']]}
-  );
-  res.send(list);
+  try {
+    const list = await Service.findAll(
+      {order: [['price', 'ASC']]}
+    );
+    res.send(list);
+  }
+  catch(error) {
+    console.error(error.message);
+    res.status(500).send('Server error')
+  }
+  
 });
 
 // Sort in descending order
 router.get('/services/order-d', async(req, res) => {
   console.log('/api/services/order-d - get');
-  const list = await Service.findAll(
-    {order: [['price', 'DESC']]}
-  );
-  res.send(list);
+  try {
+    const list = await Service.findAll(
+      {order: [['price', 'DESC']]}
+    );
+    res.send(list);
+  }
+  catch(error) {
+    console.error(error.message);
+    res.status(500).send('Server error')
+  }
 })
 
 module.exports = router;

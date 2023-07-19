@@ -38,7 +38,7 @@ const Reviews = ({getReviews, loading, reviews, isAuthenticated}) => {
         {
           reviews.map(review => (
             <SingleReview
-              key={review.id}
+              key={review.R_id}
               review={review}
             />
           ))

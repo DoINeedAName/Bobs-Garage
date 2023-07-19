@@ -24,7 +24,7 @@ const Header = ({logout, branding, isAuthenticated, isAdmin,}) => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/"><FaHome/>Home</Link>
+              <Link className="nav-link" aria-current="page" to="/"><FaHome/>Home</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/services"><ImWrench/>Services</Link>
@@ -46,47 +46,13 @@ const Header = ({logout, branding, isAuthenticated, isAdmin,}) => {
               </Link>
               <ul className="dropdown-menu dropdown-menu-dark">
                 <li>
-                  <Link class="dropdown-item" to="/about">About Us</Link>
+                  <Link className="dropdown-item" to="/about">About Us</Link>
                 </li>
                 <li>
-                  <Link class="dropdown-item" to="/staff">Meet Our Staff</Link>
+                  <Link className="dropdown-item" to="/staff">Meet Our Staff</Link>
                 </li>
               </ul>
             </li>
-            {/* <li className="nav-item dropdown">
-              <button
-                className="navbar-toggler" 
-                data-bs-toggle="collapse" 
-                data-bs-target="#navbarNavDarkDropdown"
-                type="button"
-                aria-controls="navbarNavDarkDropdown"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span class="navbar-toggler-icon"/>
-              </button>
-              <div className="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                <ul class="navbar-nav">
-                  <li class="nav-item dropdown">
-                    <button 
-                      class="btn btn-dark dropdown-toggle"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      <FaQuestion/>About
-                    </button>
-                    <ul className='dropdown-menu dropdown-menu-dark' data-bs-theme="dark">
-                      <li>
-                        <Link className="nav-link dropdown-item" to="/about">About</Link>
-                      </li>
-                      <li>
-                        <Link className="nav-link dropdown-item" to="/staff">Meet Our Staff</Link>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </li> */}
           </ul>
             
           <ul className="nav justify-content-end navbar-nav">
@@ -104,20 +70,6 @@ const Header = ({logout, branding, isAuthenticated, isAdmin,}) => {
             }
           </ul>       
           {/* <ThemeSwitch/> */}
-          {/* {isAuthenticated?(
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                
-              </li> 
-              
-            </ul>
-          ) : null} */}
-          
-          {/* {isAdmin?(
-                <li className="nav-item">
-                  <Link className="nav-link" to="/users"><FaSignInAlt/>Users</Link>
-                </li>
-              ) : null}   */}
         </div>
       </div>
     </nav>

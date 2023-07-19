@@ -62,8 +62,6 @@ const Register = ({register, isAuthenticated}) => {
     
     const user = {name, email, password}
     register(user);
-    
-    console.log('OnSubmit running...');
   }
 
   if(isAuthenticated) {
@@ -75,7 +73,6 @@ const Register = ({register, isAuthenticated}) => {
     <Fragment>
       <h1 className='text-primary'>Register as a new user</h1>
       <div className='card mb-3'>
-        <div className='card-header'>Register</div>
         <div className='card-body'>
           <form onSubmit={e => onSubmit(e)}>
             
@@ -137,7 +134,7 @@ const Register = ({register, isAuthenticated}) => {
               <input 
                 type='submit' 
                 value='Register' 
-                className='btn btn-light'
+                className='btn btn-primary'
                 />
             </div>
           </form>

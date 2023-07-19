@@ -24,7 +24,6 @@ const Login = ({login, isAuthenticated}) => {
 
   const onSubmit = async(e) => {
     e.preventDefault();
-    console.log('OnSubmit running...');
 
     // Validation
     if(email === ''){
@@ -47,7 +46,6 @@ const Login = ({login, isAuthenticated}) => {
     <Fragment>
       <h1 className='text-primary'>Login</h1>
       <div className='card mb-3'>
-        <div className='card-header'>Login</div>
         <div className='card-body'>
           <form onSubmit={e => onSubmit(e)}>
             <div className='mb-3'>
@@ -80,7 +78,7 @@ const Login = ({login, isAuthenticated}) => {
               <input 
                 type='submit' 
                 value='Login' 
-                className='btn btn-light'
+                className='btn btn-primary'
                 />
             </div>
           </form>

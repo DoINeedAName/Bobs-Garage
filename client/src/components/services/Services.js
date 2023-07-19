@@ -57,7 +57,7 @@ const Services = ({getServices, loading, services, isAdmin, sortServiceAsc, sort
           {
             services.map(service => (
               <SingleService 
-                key={service.id}
+                key={service.S_id}
                 service={service}
               />
             ))

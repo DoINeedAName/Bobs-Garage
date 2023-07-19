@@ -18,7 +18,6 @@ const EditBlog = ({
   });
 
   const {id} = useParams();
-  console.log(id);
 
   const navigate = useNavigate();
 
@@ -49,14 +48,12 @@ const EditBlog = ({
     if (content === ''){
       setFormData({...formData, errors: {content: 'Content is required'}})
     }
-    console.log('OnSubmit Edit Blog running...');
     const updBlog = {
       id,
       heading,
       image,
       content
     }
-    console.log(updBlog);
     updateBlog(updBlog)
 
     navigate('/blogs', {replace: true});
@@ -69,7 +66,6 @@ const EditBlog = ({
     <Fragment>
       <h1 className='text-primary'>Edit Blog</h1>
       <div className='card mb-3'>
-        <div classname='card-header'>Edit Blog</div>
         <div className='card-body'>
           <form onSubmit={e => onSubmit(e)}>
             <div className='mb-3'>
@@ -113,7 +109,7 @@ const EditBlog = ({
               <input 
                 type='submit' 
                 value='Save Changes' 
-                className='btn btn-light'
+                className='btn btn-primary'
                 />
             </div>
           </form>

@@ -22,7 +22,6 @@ const EditService = ({
   });
 
   const {id} = useParams();
-  console.log(id);
 
   const navigate = useNavigate();
 
@@ -57,7 +56,6 @@ const EditService = ({
     if (price === ''){
       setFormData({...formData, errors: {price: 'Price is required'}})
     }
-    console.log('OnSubmit Edit Service running...');
     const updService = {
       id,
       name,
@@ -65,7 +63,6 @@ const EditService = ({
       description,
       price
     }
-    console.log(updService);
     updateService(updService)
 
     navigate('/services', {replace: true});   
@@ -79,7 +76,6 @@ const EditService = ({
     <Fragment>
       <h1 className='text-primary'>Edit Service</h1>
       <div className='card mb-3'>
-        <div className='card-header'>Edit Service</div>
         <div className='card-body'>
           <form onSubmit={e => onSubmit(e)}>
             <div className='mb-3'>
@@ -140,7 +136,7 @@ const EditService = ({
               <input 
                 type='submit' 
                 value='Save Changes' 
-                className='btn btn-light'
+                className='btn btn-primary'
                 />
             </div>
           </form>

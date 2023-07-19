@@ -38,7 +38,6 @@ export const ThemeSwitch = () => {
 
   return (
     <div>
-      {/* <div className='theme-switcher-wrap'> */}
         <label className={`theme-switcher-label ${isDark ? 'active' : ''}`}
           onClick={handleLabelClick}
         >
@@ -46,50 +45,6 @@ export const ThemeSwitch = () => {
             <div className='switch-handle'></div>
           </div>
         </label>
-      {/* </div> */}
     </div>
   )
 }
-
-// const ThemeSwitchFunction = () => {
-//   const [isDark, setIsDark] = useState(false);
-
-//   useEffect(() => {
-//     // Checks local storage
-//     const currentThemeColor = localStorage.getItem('theme-color');
-//     if(currentThemeColor === 'theme-dark') {
-//       setIsDark(true)
-//     }
-//     else {
-//       setIsDark(false)
-//     }
-//   }, [])
-// }
-
-// export const ThemeSwitch = (isDark, onThemeToggle) => {
-//   // const handleLabelClick = (isDark) => {
-//   //   if (isDark) {
-//   //     localStorage.setItem('theme-color', 'theme-light');
-//   //     setIsDark(false);
-//   //   }
-//   //   else {
-//   //     localStorage.setItem('theme-color', 'theme-dark');
-//   //     setIsDark(true);
-//   //   }
-//   // }
-
-//   return (
-//     <div>
-//       <h5 className='text-center'>(Light / Dark Mode)</h5>
-//         <div className='theme-switcher-wrap'>
-//           <label className={`theme-switcher-label ${isDark ? 'active' : ''}`}
-//             onClick={() => onThemeToggle}
-//           >
-//             <div className='switch-path'>
-//               <div className='switch-handle'></div>
-//             </div>
-//           </label>
-//         </div>
-//     </div>
-//   )
-// }

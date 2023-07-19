@@ -6,7 +6,7 @@ const date = new Date();
 
 const Footer = () => {
   return (
-    <div className='bg-dark p-2 my-3'>
+    <div className='bg-dark p-2'>
 			<div className='container'>
 				<div className='row'>
 					<div className='col'>
